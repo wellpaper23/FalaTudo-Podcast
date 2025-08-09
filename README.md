@@ -31,12 +31,12 @@ API REST do **FalaTudo Podcast**, uma plataforma de streaming focada em podcasts
   - (Futuro) Endpoints para servir conteúdo de áudio
 
 ## ▶️ Como executar
-    ```
+    
     1. Clone o repositório: https://github.com/wellpaper23/FalaTudo-Podcast.git
     2. Navegue até o diretório do projeto: cd FalaTudo-Podcast
-    Construa o projeto: mvn clean install
-    Execute a aplicação: mvn spring-boot:run
-    Acesse a aplicação em http://localhost:8080
-    ```
+    3.Construa o projeto: mvn clean install
+    4.Execute a aplicação: mvn spring-boot:run
+    5.Acesse a aplicação em http://localhost:8080
+    
 ## ❗Observações
 Eu ainda estou aprendendo e pesquisando mais, espero descobrir novas tecnologias e técnicas no processo, tambem aceitarei sempre sugestões de melhorias, tanto em código quanto em apresentações, muito obrigado!
