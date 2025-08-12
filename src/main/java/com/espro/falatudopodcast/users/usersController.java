@@ -3,10 +3,16 @@ package com.espro.falatudopodcast.users;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.service.annotation.DeleteExchange;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/user")
 public class usersController {
+    private final userService userService;
 
+    public usersController(userService userService) {
+        this.userService = userService;
+    }
 
     @GetMapping()
     public String userPage() {
@@ -14,27 +20,28 @@ public class usersController {
     }
     //criar usuario
     @PostMapping("/create")
-    public String createUser() {
-        return "usuario criado com sucesso!";
+    public userModel createUser(@RequestBody userModel user) {
+        return userService.createUser(user);
     }
     //ver todos usuario
     @GetMapping("list")
-    public String listUsers() {
-        return "usuarios listados com sucesso!";
+    public List<userModel> listUsers() {
+        return userService.listUsers();
     }
     //ver usuario especifico
     @GetMapping("/{id}")
-    public String showUser() {
-        return "usuario exibido com sucesso!";
+    public userModel showUser(@PathVariable Long id) {
+        return userService.showUserById(id);
     }
-    //editar usuario
-    @PutMapping("/updateUser")
-    public String updateUser() {
-        return "usuario atualizado com sucesso!";
+    //atualizar usuario
+    @PutMapping("/updateUser/{id}")
+    public userModel updateUser(@PathVariable Long id, @RequestBody userModel user) {
+        return userService.updateUserById(id, user);
+
     }
     //deletar usuario
-    @DeleteMapping("/delete")
-    public String deleteUser() {
-        return  "usuario deletado com sucesso!";
+    @DeleteMapping("/delete/{id}")
+    public void deleteUser(@PathVariable Long id) {
+        userService.deleteUserById(id);
     }
 }
