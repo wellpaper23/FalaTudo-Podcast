@@ -1,16 +1,15 @@
 package com.espro.falatudopodcast.users;
 
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.service.annotation.DeleteExchange;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/user")
-public class usersController {
-    private final userService userService;
+public class UsersController {
+    private final UserService userService;
 
-    public usersController(userService userService) {
+    public UsersController(UserService userService) {
         this.userService = userService;
     }
 
@@ -20,22 +19,22 @@ public class usersController {
     }
     //criar usuario
     @PostMapping("/create")
-    public userModel createUser(@RequestBody userModel user) {
+    public UserModel createUser(@RequestBody UserModel user) {
         return userService.createUser(user);
     }
     //ver todos usuario
     @GetMapping("list")
-    public List<userModel> listUsers() {
+    public List<UserModel> listUsers() {
         return userService.listUsers();
     }
     //ver usuario especifico
     @GetMapping("/{id}")
-    public userModel showUser(@PathVariable Long id) {
+    public UserModel showUser(@PathVariable Long id) {
         return userService.showUserById(id);
     }
     //atualizar usuario
     @PutMapping("/updateUser/{id}")
-    public userModel updateUser(@PathVariable Long id, @RequestBody userModel user) {
+    public UserModel updateUser(@PathVariable Long id, @RequestBody UserModel user) {
         return userService.updateUserById(id, user);
 
     }

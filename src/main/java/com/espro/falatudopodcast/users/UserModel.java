@@ -1,16 +1,19 @@
 package com.espro.falatudopodcast.users;
 
+
 import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name="users_table")
 
 
-public class userModel {
-    public userModel() {
+public class UserModel {
+    public UserModel() {
     }
 
-    public userModel(int id,String name, String username, String password, String email, int idade, String urlProfilePicture) {
+    public UserModel(int id, String name, String username, String password, String email, int idade, String urlProfilePicture) {
         this.id = id;
         this.name = name;
         this.username = username;
@@ -26,17 +29,22 @@ public class userModel {
     private int id;
     @Column(name = "name")
     private String name;
-    @Column(name="username")
+    @Column(name= "username")
     private String username;
     @Column(name = "password")
     private String password;
     @Column(name = "email", unique = true)
     private String email;
-    @Column(name="idade")
+    @Column(name= "age")
     private int idade;
-    @Column(name="url_profile_picture")
+    @Column(name= "url_profile_picture")
     private String urlProfilePicture;
-
+/*
+    @OneToMany(mappedBy = "user")
+    private List<PlaylistModel> playlists;
+    @OneToMany(mappedBy = "owner")
+    private List<PodcastModel> podcasts;
+*/
     public int getId() {
         return id;
     }
