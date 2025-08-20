@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.espro</groupId>
-    <artifactId>FalaTudoPodcast</artifactId>
+    <artifactId>TaGravando-Podcast</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>Fala Tudo Podcast</name>
     <description>Fala Tudo Podcast</description>
