@@ -1,6 +1,8 @@
 package com.espro.falatudopodcast.users;
 
 
+import com.espro.falatudopodcast.playlists.PlaylistModel;
+import com.espro.falatudopodcast.podcasts.PodcastModel;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -39,12 +41,12 @@ public class UserModel {
     private int idade;
     @Column(name= "url_profile_picture")
     private String urlProfilePicture;
-/*
+
     @OneToMany(mappedBy = "user")
     private List<PlaylistModel> playlists;
-    @OneToMany(mappedBy = "owner")
+    @OneToMany(mappedBy = "user")
     private List<PodcastModel> podcasts;
-*/
+
     public int getId() {
         return id;
     }
